@@ -1,17 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./components/App";
+
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+// state по умолчанию, значение м.б. разное
+const initialState = {
+  money: 100,
+};
+
+// action
+const depositMoneyAction = {
+  type: "bank/depositMoney",
+  payload: 10,
+};
+const withdrawMoneyAction = {
+  type: "bank/withdrawMoney",
+  payload: 10,
+};
+
+// reducer
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "bank/depositMoney":
+      return { ...state, money: state.money + action.payload };
+    case "bank/withdrawMoney":
+      return { ...state, money: state.money - action.payload };
+    default:
+      return state;
+  }
+};
+
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
