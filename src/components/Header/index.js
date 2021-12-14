@@ -1,9 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-
-// selector
-const selectMoney = (state) => state.money;
+import { selectMoney } from "../../store/bank/selectors";
 
 const Header = () => {
   const money = useSelector(selectMoney);

@@ -3,23 +3,14 @@ import "./styles.css";
 
 import { useDispatch, useSelector } from "react-redux";
 
-// selector
-const selectMoney = (state) => state.money;
+import {
+  depositMoneyAction,
+  withdrawMoneyAction,
+} from "../../store/bank/actions";
 
-// action
-const depositMoneyAction = (value) => {
-  return {
-    type: "bank/depositMoney",
-    payload: +value,
-  };
-};
+import { selectMoney } from "../../store/bank/selectors";
 
-const withdrawMoneyAction = (value) => {
-  return {
-    type: "bank/withdrawMoney",
-    payload: +value,
-  };
-};
+
 
 const AppContent = () => {
   const [depositValue, setDepositValue] = useState(0);

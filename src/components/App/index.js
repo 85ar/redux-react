@@ -1,4 +1,5 @@
 import AppContent from "../AppContent";
+import Counter from "../Counter";
 import Header from "../Header";
 import "./styles.css";
 
@@ -7,6 +8,7 @@ const App = () => {
     <div className="App">
       <Header />
       <AppContent />
+      <Counter />
     </div>
   );
 };
