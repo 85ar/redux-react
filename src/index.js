@@ -8,17 +8,7 @@ import { Provider } from "react-redux";
 
 // state по умолчанию, значение м.б. разное
 const initialState = {
-  money: 100,
-};
-
-// action
-const depositMoneyAction = {
-  type: "bank/depositMoney",
-  payload: 10,
-};
-const withdrawMoneyAction = {
-  type: "bank/withdrawMoney",
-  payload: 10,
+  money: 150,
 };
 
 // reducer

@@ -1,9 +1,10 @@
 import "./styles.css";
+import AppContent from "../AppContent";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Redux</h1>
+      <AppContent />
     </div>
   );
 };
