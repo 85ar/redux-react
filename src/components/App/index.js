@@ -1,5 +1,6 @@
 import AppContent from "../AppContent";
 import Counter from "../Counter";
+import EmployeeList from "../EmployeeList";
 import Header from "../Header";
 import "./styles.css";
 
@@ -9,6 +10,7 @@ const App = () => {
       <Header />
       <AppContent />
       <Counter />
+      <EmployeeList />
     </div>
   );
 };
